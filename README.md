@@ -1,0 +1,20 @@
+
+
+DESARROLLO DE SOFTWARE
+
+PROYECTO SYSACAD - MICROSERVICIO DE DOCUMENTOS
+
+$ DAMIANI MACARENA
+$ DIAZ ROSSI JUAN CRUZ
+$ MATURANO PABLO
+$ MERCADO MARTIN
+$ LIMERES TOMÁS
+
+
+LEVANTAR LA APLICACIÓN - PASO A PASO:
+
+
+
+Agentes de IA utilizados para investigación, depuración y optimización: 
+
+• Gemini 2.5 Flash 
