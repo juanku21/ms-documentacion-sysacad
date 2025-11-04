@@ -1,9 +1,6 @@
 
-
-
 import { ServerHTTP } from "../src/index"
-// import { ClassRoomService } from "../../src/services/classRoom.service"
-import { StudentCreateInput, StudentUpdateInput } from "../src/validators/student.validator"
+import { StudentCreateInput } from "../src/validators/student.validator"
 import request from 'supertest'
 
 
@@ -35,14 +32,14 @@ describe("Certificate controller", () => {
 
             const student : StudentCreateInput = {
                 id: 1,
-                nombre: 'Juan Cruz',
                 apellido: 'Diaz Rossi',
+                nombre: 'Juan Cruz',
                 nro_documento: 45588489,
                 tipo_documento: "DNI",
-                fecha_ingreso: '01-03-2022',
+                fecha_ingreso: "2022-03-01",
                 sexo: 'M',
                 nro_legajo: 8873,
-                fecha_nacimiento: '21-01-2004'
+                fecha_nacimiento: "2004-01-21"
             }
 
             const response = await request(appTest.getApp()).post('/certificate/pdf').send(student)
@@ -61,10 +58,10 @@ describe("Certificate controller", () => {
                 nombre: 'Juan Cruz',
                 nro_documento: 45588489,
                 tipo_documento: "DNI",
-                fecha_ingreso: '01-03-2022',
+                fecha_ingreso: "2022-03-01",
                 sexo: 'M',
                 nro_legajo: 8873,
-                fecha_nacimiento: '21-01-2004'
+                fecha_nacimiento: "2004-01-21"
             }
 
             const response = await request(appTest.getApp()).post('/certificate/pdf').send(student)
@@ -75,6 +72,7 @@ describe("Certificate controller", () => {
 
         })
 
+
     })
 
 
@@ -84,15 +82,16 @@ describe("Certificate controller", () => {
 
             const student : StudentCreateInput = {
                 id: 1,
-                nombre: 'Juan Cruz',
                 apellido: 'Diaz Rossi',
+                nombre: 'Juan Cruz',
                 nro_documento: 45588489,
                 tipo_documento: "DNI",
-                fecha_ingreso: '01-03-2022',
+                fecha_ingreso: "2022-03-01",
                 sexo: 'M',
                 nro_legajo: 8873,
-                fecha_nacimiento: '21-01-2004'
+                fecha_nacimiento: "2004-01-21"
             }
+
 
             const response = await request(appTest.getApp()).post('/certificate/docx').send(student)
 
@@ -109,10 +108,10 @@ describe("Certificate controller", () => {
                 nombre: 'Juan Cruz',
                 nro_documento: 45588489,
                 tipo_documento: "DNI",
-                fecha_ingreso: '01-03-2022',
+                fecha_ingreso: "2022-03-01",
                 sexo: 'M',
                 nro_legajo: 8873,
-                fecha_nacimiento: '21-01-2004'
+                fecha_nacimiento: "2004-01-21"
             }
 
             const response = await request(appTest.getApp()).post('/certificate/docx').send(student)
