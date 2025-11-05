@@ -4,7 +4,7 @@ import { CertificateController } from '../controllers/certificate.controller'
 
 const certifcateRouter = express.Router()
 
-certifcateRouter.post('/pdf', CertificateController.getPDFByStudent)
-certifcateRouter.post('/docx', CertificateController.getODTByStudent)
+certifcateRouter.get('/:id/pdf', CertificateController.getPDFByStudentId)
+certifcateRouter.get('/:id/docx', CertificateController.getDOCXByStudentId)
 
 export default certifcateRouter

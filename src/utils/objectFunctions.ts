@@ -22,8 +22,15 @@ export const merge = (objOne : object, objTwo : object) :  object => {
 }
 
 
+export const isIntegerString = (input: string) : boolean => {
+    
+    if (!input) {
+        return false;
+    }
+    
+    const integerRegex = /^-?\d+$/; 
+    
+    return integerRegex.test(input.trim());
 
-
-
-
+}
 
