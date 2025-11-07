@@ -1,6 +1,7 @@
 
 import { PDFGenerator } from "../utils/pdf"
-import { RegularCertificateInput } from "../types"
+import { IAlumno } from "../types"
+import { StudentMapper } from "../mapping/student.mapper"
 import { DOCXGenerator } from "../utils/docx"
 import config from "../config/config"
 
@@ -12,9 +13,9 @@ export class CerficateService {
 
             const student = await this.getAlumnoById(id)
 
-            // const studentInput = StudentMapper.fromEntityToCertificateObject(student)
+            const studentInput = StudentMapper.fromEntityToCertificateObject(student)
 
-            const certificate = await PDFGenerator.regularCertificate(student)
+            const certificate = await PDFGenerator.regularCertificate(studentInput)
 
             return certificate
 
@@ -31,9 +32,9 @@ export class CerficateService {
 
             const student = await this.getAlumnoById(id)
 
-            // const studentInput = StudentMapper.fromEntityToCertificateObject(student)
+            const studentInput = StudentMapper.fromEntityToCertificateObject(student)
 
-            const certificate = await DOCXGenerator.regularCertificate(student)
+            const certificate = await DOCXGenerator.regularCertificate(studentInput)
 
             return certificate
 

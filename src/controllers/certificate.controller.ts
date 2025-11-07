@@ -20,12 +20,8 @@ export class CertificateController {
 
             const result = await CerficateService.generateRegularCertificatePDF(id)
 
-            // if (result === null) {
-            //     throw new Error('El recurso con el ID solicitado no existe')
-            // }
-
             res.setHeader('Content-Type', 'application/pdf')
-            res.setHeader('Content-Disposition', `inline; filename="certificado_alumno_regular_${req.body.id}.pdf"`)
+            res.setHeader('Content-Disposition', `inline; filename="certificado_alumno_regular_${id}.pdf"`)
             
             res.status(200).send(result)
 
@@ -58,10 +54,6 @@ export class CertificateController {
             const id = parseInt(paramId)
 
             const result = await CerficateService.generateRegularCertificateDOCX(id)
-
-            // if (result === null) {
-            //     throw new Error('El recurso con el ID solicitado no existe')
-            // }
 
             res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
             res.setHeader('Content-Disposition', 'attachment; filename=certificado.docx')
