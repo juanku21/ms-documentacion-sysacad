@@ -1,0 +1,8 @@
+
+dist
+node_modules
+.gitignore
+.env
+README
+jest.config.cjs
+test
