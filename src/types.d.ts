@@ -38,7 +38,7 @@ export interface IEspecialidad {
     nombre: string
     letra: string
     observacion: string
-    tipo_espacialidad: string
+    tipo_especialidad: string
     facultad: IFacultad
 }
 

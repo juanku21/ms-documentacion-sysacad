@@ -1,6 +1,6 @@
 
 import { PDFGenerator } from "../utils/pdf"
-import { IAlumno } from "../types"
+import { StudentValidator } from "../validators/student.validator"
 import { StudentMapper } from "../mapping/student.mapper"
 import { DOCXGenerator } from "../utils/docx"
 import config from "../config/config"
@@ -64,6 +64,10 @@ export class CerficateService {
             }
 
             const student = await response.json()
+
+            if (!StudentValidator.check(student)) {
+                throw new Error('El estudiante obtenido no coincide con el objeto esperado')
+            }
 
             return student
 
